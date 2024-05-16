@@ -10,7 +10,38 @@
 6.  go to production,start "BI.PD.AlertProduction"
 7.  open SMP in namespace BI Analytics > User Portal >  Alert Dashboard
 8.  success!!!
-##  Dashboard data is refreshed every 5s
+###  Dashboard data is refreshed every 5s
+## Docker
+The example works in namespace USER    
+Step 1...5 are done during container start     
+Step 6.  start production"BI.PD.AlertProduction"    
+http://localhost:42773/csp/user/EnsPortal.ProductionConfig.zen?PRODUCTION=BI.PD.AlertProduction     
+Step 7.  open SMP in namespace BI Analytics > User Portal >  Alert Dashboard     
+http://localhost:42773/csp/user/_DeepSee.UserPortal.DashboardViewer.zen?DASHBOARD=BI/Dashbord/AlertDashboard.dashboard      
+
+### Prerequisites
+Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
+### Installation
+Clone/git pull the repo into any local directory
+```
+$ git clone https://github.com/rcemper/PR_AlertDashboard.git
+```
+```
+$ docker compose up -d && docker compose logs -f
+```
+To open IRIS Terminal do:
+```
+$ docker-compose exec iris iris session iris
+USER>
+```
+or using **WebTerminal**
+```
+http://localhost:42773/terminal/
+```
+To access IRIS System Management Portal
+```
+http://localhost:42773/csp/sys/UtilHome.csp
+``` 
 
 
 
